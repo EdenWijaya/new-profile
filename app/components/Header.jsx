@@ -14,9 +14,17 @@ const Header = () => {
         <h1 className='text-3xl sm:text-6xl lg:text-[66px] font-Ovo'>
             saya ada mahasiswa yang sedang belajar tentang web development
         </h1>
-        <p>
-            
+        <p className='max-w-2xl mx-auto font-Ovo '>
+            Saya adalah seorang front-end developer yang sangat passionat dan ingin memajukan dunia web.
         </p>
+        <div>
+            <a href="#contact">
+                Contact Me <Image src={assets.right_arrow_white} alt='' className='w-4'/>
+            </a>
+            <a href="/sample-resume.pdf" download className='px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2'>
+                My Resume <Image src={assets.download_icon} alt='' className='w-4'/>
+            </a>
+        </div>
     </div>
   )
 }
