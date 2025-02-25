@@ -18,12 +18,12 @@ const About = () => {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac nisl nec purus scelerisque aliquet. Nulla facilisi. Nullam et nunc ut eros vehicula ultricies. Sed et
                 </p>
 
-                <ul>
+                <ul className='grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl'>
                     {infoList.map(({icon, iconDark, title, description}, index)=>(
-                        <li key={index}>
-                            <Image src={icon} alt={title}/>
-                            <h3>{title}</h3>
-                            <p>{description}</p>
+                        <li className='border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer' key={index}>
+                            <Image src={icon} alt={title} className='w-7 mt-3'/>
+                            <h3 className='my-4 font-semibold text-gray-700'>{title}</h3>
+                            <p className='text-gray-600 text-sm'>{description}</p>
                         </li>
                     ))}
                 </ul>
