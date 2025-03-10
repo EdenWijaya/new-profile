@@ -37,6 +37,11 @@ const Project = () => {
           </div>
         ))}
       </div>
+
+        <a href="" className='w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-10 hover:bg-lightHover duration-500'>
+          show more <Image src={assets.right_arrow_bold} alt='right arrow' className='w-4' />
+        </a>
+
     </div>
   )
 }
