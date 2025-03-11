@@ -18,7 +18,7 @@ export default function Home() {
     }else {
       setIsDarkMode(false);
     }
-  })
+  }, [])
 
   useEffect(() => {
     if (isDarkMode) {
