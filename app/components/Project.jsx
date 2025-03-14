@@ -1,21 +1,46 @@
 import { assets, workData } from '@/assets/assets'
 import Image from 'next/image'
 import React from 'react'
+import { motion } from 'motion/react'
 
 const Project = ({isDarkMode}) => {
   return (
-    <div id='project' className='w-full px-[12%] py-10 scroll-mt-20'>
-      <h4 className='text-center mb-2 text-lg font-Ovo'>My Portfolio</h4>
-      <h2 className='text-center text-5xl font-Ovo'>My Latest Work</h2>
+    <motion.div 
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 1 }}
+    id='project' className='w-full px-[12%] py-10 scroll-mt-20'>
+      <motion.h4 
+      initial={{ opacity: 0, y: -20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.4 }}
+      className='text-center mb-2 text-lg font-Ovo'>My Portfolio</motion.h4>
 
-      <p className='text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo'>
+      <motion.h2 
+      initial={{ opacity: 0, y: -20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.6 }}
+      className='text-center text-5xl font-Ovo'>My Latest Work</motion.h2>
+
+      <motion.p 
+      initial={{ opacity: 0, y: -20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.8 }}
+      className='text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo'>
         Welcome to my portfolio page! Here you can see some of my college works and latest projects.
-      </p>
+      </motion.p>
+
 
       {/* Memperlebar grid agar sejajar dengan elemen di atasnya */}
-      <div className='max-w-[90rem] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 dark:text-black'>
+      <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.8}}
+      className='max-w-[90rem] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 dark:text-black'>
         {workData.map((project, index) => (
-          <div 
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
             key={index} 
             className='h-64 bg-no-repeat bg-cover bg-center rounded-xl shadow-md relative cursor-pointer group'
             style={{ backgroundImage: `url(${project.bgImage})` }}
@@ -34,15 +59,21 @@ const Project = ({isDarkMode}) => {
               />
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
-        <a href="" className='w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-10 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover'>
+        <motion.a 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 1.1 }}
+        href="" className='w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-10 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover'>
           show more <Image src={isDarkMode ? assets.right_arrow_white : assets.right_arrow_bold} alt='right arrow' className='w-4' />
-        </a>
+        </motion.a>
 
-    </div>
+    </motion.div>
+
+
   )
 }
 
