@@ -64,9 +64,8 @@ const Project = ({isDarkMode}) => {
       </motion.div>
 
         <motion.a 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 1.1 }}
+        whileHover={{ scale: 1.03 }}
+        transition={{ duration: 0.3 }}
         href="" className='w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-10 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover'>
           show more <Image src={isDarkMode ? assets.right_arrow_white : assets.right_arrow_bold} alt='right arrow' className='w-4' />
         </motion.a>
